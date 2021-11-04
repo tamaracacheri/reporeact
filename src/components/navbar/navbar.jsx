@@ -14,7 +14,8 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import DrawerMenu from './drawermenu';
+import DrawerMenu from './drawerMenu/drawerMenu';
+import CartWidget from './CartWidget/cartWidget';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -176,6 +177,7 @@ export default function PrimarySearchAppBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          <CartWidget/>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
