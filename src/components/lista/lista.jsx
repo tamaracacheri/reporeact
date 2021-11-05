@@ -28,12 +28,12 @@ export default function BasicList() {
         <List>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemText primary="Combos" />
+              <ListItemText primary="Cervezas" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#simple-list">
-              <ListItemText primary="Snacks" />
+              <ListItemText primary="Vinos" />
             </ListItemButton>
           </ListItem>
         </List>
