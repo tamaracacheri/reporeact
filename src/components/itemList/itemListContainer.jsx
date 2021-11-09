@@ -1,4 +1,5 @@
 import { Container, Box } from '@mui/material';
+import ItemCount from '../itemCount';
 
 const ItemListContainer = ({ title }) => {
     return ( 
@@ -8,9 +9,9 @@ const ItemListContainer = ({ title }) => {
                     mx: 'auto',
                     marginTop: 5,
                     textAlign: 'center'
-                }}
-            >
-                <h3>{title}</h3>
+                }}>
+                <h1>{title}</h1>
+                <ItemCount stock={5} initial={1}/>
             </Box>
         </Container>
     );
