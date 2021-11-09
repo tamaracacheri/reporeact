@@ -14,8 +14,8 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import DrawerMenu from './drawerMenu/drawerMenu';
-import CartWidget from './CartWidget/cartWidget';
+import DrawerMenu from './drawerMenu';
+import CartWidget from './cartWidget';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -57,7 +57,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 

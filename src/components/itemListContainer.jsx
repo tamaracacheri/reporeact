@@ -1,5 +1,5 @@
 import { Container, Box } from '@mui/material';
-import ItemCount from '../itemCount';
+import ItemCount from './itemCount';
 
 const ItemListContainer = ({ title }) => {
     return ( 
