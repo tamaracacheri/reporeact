@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <NavBar/>
-      <ItemListContainer title="Bienvenido a Great Buy Shop"/>
+      <ItemListContainer title="Welcome to Great Buy Shop"/>
     </div>
   );
 }

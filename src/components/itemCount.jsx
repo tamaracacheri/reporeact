@@ -1,5 +1,14 @@
 import { useState } from "react";
 import Button from '@mui/material/Button';
+import { styled } from '@mui/styles';
+
+const MyButton = styled (Button) ({
+    background: 'rgb(6, 4, 95)',
+    color: 'white',
+    '&:hover': {
+        background: 'rgb(6, 4, 205)',
+     },
+});
 
 const ItemCount = ({stock, initial}) => {
     
@@ -29,11 +38,11 @@ const ItemCount = ({stock, initial}) => {
             <div className="card-item">
                 <p className="card-title">Producto</p>
                 <div className="card-body">
-                    <Button variant="outlined" onClick={addItem}>+</Button>
+                    <Button variant="text" onClick={addItem}>+</Button>
                     <p>{count}</p>
-                    <Button variant="outlined" onClick={quitItem}>-</Button>
+                    <Button variant="text" onClick={quitItem}>-</Button>
                 </div>
-                <Button variant="contained" onClick={onAdd}>Agregar al carrito</Button>
+                <MyButton variant="contained" onClick={onAdd}>Add to cart</MyButton>
             </div>
         </>
     )
