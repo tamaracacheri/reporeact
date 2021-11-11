@@ -1,16 +1,14 @@
 import './App.css';
-import NavBar from './components/navbar/navbar';
-import BasicList from './components/lista/lista';
-import TitleComponent from './components/title/title';
-import ItemListContainer from './components/navbar/ItemList/itemListContainer';
+import NavBar from './components/navbar';
+import BasicList from './components/lista';
+import ItemListContainer from './components/itemListContainer'
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
       <BasicList/>
-      <TitleComponent />
-      <ItemListContainer />
+      <ItemListContainer title="Bienvenidos a mi tienda" />
     </div>
   );
 }

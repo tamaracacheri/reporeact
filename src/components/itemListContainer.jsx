@@ -1,7 +1,8 @@
 import { Container, Box } from '@mui/material';
-import TitleComponent from './title/title';
+import ItemCount from './ItemCount';
 
-const ItemListContainer = () => {
+
+const ItemListContainer = ({ title }) => {
     return ( 
         <Container maxWidth="xl">
             <Box sx={{
@@ -11,10 +12,12 @@ const ItemListContainer = () => {
                     textAlign: 'center'
                 }}
             >
-                <TitleComponent/>
+                <h1>{title}</h1>
+                <ItemCount stock={5} initial={1} />
             </Box>
         </Container>
     );
 }
  
 export default ItemListContainer;
+ 
