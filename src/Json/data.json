@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "title": "Intel i3 12600k",
+        "description": "Processor pc component",
+        "price": 120,
+        "stock": 20,
+        "pictureUrl": "https://m.media-amazon.com/images/I/51S2a+GyxUS._AC_UY218_.jpg",
+        "category": "Computer components"
+    },
+    {
+        "id": 2,
+        "title": "Intel i5 12600k",
+        "description": "Processor pc component",
+        "price": 300,
+        "stock": 10,
+        "pictureUrl": "https://m.media-amazon.com/images/I/61xAzEoCuhL._AC_UY218_.jpg",
+        "category": "Computer components"
+    },
+    {
+        "id": 3,
+        "title": "Intel i7 12700k",
+        "description": "Processor pc component",
+        "price": 450,
+        "stock": 5,
+        "pictureUrl": "https://m.media-amazon.com/images/I/714-1OvyFIL._AC_UY218_.jpg",
+        "category": "Computer components"
+    },
+    {
+        "id": 7,
+        "title": "Intel i9 12900k",
+        "description": "Processor pc component",
+        "price": 790,
+        "stock": 2,
+        "pictureUrl": "https://m.media-amazon.com/images/I/61aMmen0cFL._AC_UY218_.jpg",
+        "category": "Computer components"
+    },
+    {
+        "id": 4,
+        "title": "Ryzen 3 3100",
+        "description": "Processor pc component",
+        "price": 199,
+        "stock": 15,
+        "pictureUrl": "https://m.media-amazon.com/images/I/71DTUOZdDnL._AC_UY218_.jpg",
+        "category": "Computer components"
+    },
+    {
+        "id": 5,
+        "title": "Ryzen 5 5600X",
+        "description": "Processor pc component",
+        "price": 299,
+        "stock": 10,
+        "pictureUrl": "https://m.media-amazon.com/images/I/71WPGXQLcLL._AC_UY218_.jpg",
+        "category": "Computer components"
+    },
+    {
+        "id": 6,
+        "title": "Ryzen 7 5800X",
+        "description": "Processor pc component",
+        "price": 340,
+        "stock": 5,
+        "pictureUrl": "https://m.media-amazon.com/images/I/71-udC1UaXL._AC_UY218_.jpg",
+        "category": "Computer components"
+    },
+    {
+        "id": 8,
+        "title": "Ryzen 9 5950X",
+        "description": "Processor pc component",
+        "price": 720,
+        "stock": 5,
+        "pictureUrl": "https://m.media-amazon.com/images/I/51Bli5sqtwS._AC_UY218_.jpg",
+        "category": "Computer components"
+    },
+    {
+        "id": 9,
+        "title": "MSI GeForce RTX 3060 12gb",
+        "description": "Graphic card pc component",
+        "price": 930,
+        "stock": 2,
+        "pictureUrl": "https://m.media-amazon.com/images/I/71tduSp8ooL._AC_UY218_.jpg",
+        "category": "Computer components"
+    },
+    {
+        "id": 10,
+        "title": "MSI GeForce RTX 3070 8gb",
+        "description": "Graphic card pc component",
+        "price": 1199,
+        "stock": 3,
+        "pictureUrl": "https://m.media-amazon.com/images/I/8171LQPWPtS._AC_UY218_.jpg",
+        "category": "Computer components"
+    },
+    {
+        "id": 11,
+        "title": "MSI GeForce RTX 3070ti 8gb",
+        "description": "Graphic card pc component",
+        "price": 1599,
+        "stock": 2,
+        "pictureUrl": "https://m.media-amazon.com/images/I/71f5IO65dCS._AC_UY218_.jpg",
+        "category": "Computer components"
+    },
+    {
+        "id": 12,
+        "title": "Asus GeForce RTX 3070ti 8gb",
+        "description": "Graphic card pc component",
+        "price": 1799,
+        "stock": 1,
+        "pictureUrl": "https://m.media-amazon.com/images/I/91V+jq4ixES._AC_UY218_.jpg",
+        "category": "Computer components"
+    }
+]

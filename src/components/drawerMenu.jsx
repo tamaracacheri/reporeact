@@ -60,7 +60,7 @@ export default function PersistentDrawerLeft() {
             edge="start"
             sx={{ mr: 2, ...(open && { display: 'none' }) }}
           >
-          <MenuIcon/>
+          <MenuIcon />
           </IconButton>
       <Drawer
         sx={{
@@ -118,7 +118,7 @@ export default function PersistentDrawerLeft() {
         </List>
       </Drawer>
       <Main open={open}>
-        <DrawerHeader/>
+        <DrawerHeader />
       </Main>
     </Box>
   );

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from '@mui/material/Button';
 import { styled } from '@mui/styles';
 
-const MyButton = styled (Button) ({
+const ButtonAddCart = styled (Button) ({
     background: 'rgb(6, 4, 95)',
     color: 'white',
     '&:hover': {
@@ -34,17 +34,14 @@ const ItemCount = ({stock, initial}) => {
     };
 
     return (
-        <>  
-            <div className="card-item">
-                <p className="card-title">Producto</p>
-                <div className="card-body">
+            <div className="card-btn">
+                <div className="card-count">
                     <Button variant="text" onClick={addItem}>+</Button>
                     <p>{count}</p>
                     <Button variant="text" onClick={quitItem}>-</Button>
                 </div>
-                <MyButton variant="contained" onClick={onAdd}>Add to cart</MyButton>
+                <ButtonAddCart variant="contained" onClick={onAdd}>Add to cart</ButtonAddCart>
             </div>
-        </>
     )
 };
 
