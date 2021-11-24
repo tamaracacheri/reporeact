@@ -13,7 +13,7 @@ export default function BasicList() {
         <List>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemText primary="Bebidas" />
+              <ListItemText primary="Cervezas" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -28,7 +28,7 @@ export default function BasicList() {
         <List>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemText primary="Cervezas" />
+              <ListItemText primary="Espumantes" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
