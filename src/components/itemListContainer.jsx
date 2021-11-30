@@ -16,9 +16,9 @@ const ItemListContainer = ({ title }) => {
 
     return ( 
         <>
-            <h1 className="category-title">{title}</h1>
+            <h1 className="category-title">{ title }</h1>
             <div className="item-container">
-                <ItemList products={products} />
+                <ItemList products = { products } />
             </div>
         </>
     );
