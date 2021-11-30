@@ -1,7 +1,7 @@
-import NavBar from './components/navbar';
-import ItemListContainer from './components/itemListContainer';
+import NavBar from './components/Navbar';
+import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 import { Route, Routes } from 'react-router-dom';
-import ItemDetailContainer from './components/itemDetailContainer';
 
 function App() {
   return (
@@ -9,7 +9,8 @@ function App() {
       <NavBar/>
         <Routes>
           <Route path = "/" element = { <ItemListContainer title="Welcome to Great Buy Shop"/> } />
-          <Route path = "item/:id" element = { <ItemDetailContainer /> } />
+          <Route path = "/item/:id" element = { <ItemDetailContainer /> } />
+          <Route path = "/category/:id" element = { <ItemDetailContainer /> } />
         </Routes>
     </div>
   );

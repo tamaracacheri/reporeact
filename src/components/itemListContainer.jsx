@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import getProducts from '../services/promise';
-import ItemList from './itemList';
+import ItemList from './ItemList';
 
 const ItemListContainer = ({ title }) => {
     

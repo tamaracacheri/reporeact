@@ -10,9 +10,11 @@ const ButtonAddCart = styled (Button) ({
      },
 });
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({ stock, initial, setQuantity }) => {
     
     const [count, setCount] = useState(initial);
+
+    const [rendCounter, setRendCounter] = useState(true);
     
     const addItem = () => {
         const newCount = count + 1;
@@ -21,7 +23,7 @@ const ItemCount = ({stock, initial}) => {
         };
     };
 
-    const quitItem = () => {
+    const removeItem = () => {
         const newCount = count - 1;
         if (newCount >= initial) {
             setCount(newCount);
@@ -29,20 +31,24 @@ const ItemCount = ({stock, initial}) => {
     };
 
     const onAdd = () => {
-        const message =  `Add ${count} item`;
-        (count === 1) ? alert(message) : alert(`${message}s`);
+        setQuantity(count);
+        setRendCounter(false);
     };
 
-    return (
-            <div className="card-btn">
-                <div className="card-count">
-                    <Button variant="text" onClick={addItem}>+</Button>
-                    <p>{count}</p>
-                    <Button variant="text" onClick={quitItem}>-</Button>
+    if (rendCounter) {
+        return (
+                <div className = "card-btn">
+                    <div className = "card-count">
+                        <Button variant = "text" onClick = { addItem }>+</Button>
+                        <p>{count}</p>
+                        <Button variant = "text" onClick = { removeItem }>-</Button>
+                    </div>
+                    <ButtonAddCart variant = "contained" onClick = { onAdd }>Add to cart</ButtonAddCart>
                 </div>
-                <ButtonAddCart variant="contained" onClick={onAdd}>Add to cart</ButtonAddCart>
-            </div>
-    )
+        );
+    } else {
+        return (<></>);
+  }
 };
 
 export default ItemCount;
