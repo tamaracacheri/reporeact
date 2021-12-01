@@ -1,4 +1,3 @@
-import { Container, Box } from '@mui/material';
 import { useEffect, useState } from 'react';
 import ItemList from './itemList';
 import getProducts from './services/handMadePromise';
@@ -17,18 +16,12 @@ const ItemListContainer = ({ title }) => {
     }, []);
 
     return ( 
-        <Container maxWidth="xl">
-            <Box sx={{
-                    flexGrow: 1,
-                    mx: 'auto',
-                    marginTop: 5,
-                    textAlign: 'center'
-                }}
-            >
-                <h1>{title}</h1>
-                <ItemList products={products} />
-            </Box>
-        </Container>
+        <>
+            <h1>{title}</h1>
+            <div className="item-container">
+                <ItemList products = { products } />
+            </div>
+        </>
     );
 }
 
