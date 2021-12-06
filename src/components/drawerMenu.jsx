@@ -11,6 +11,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -38,7 +39,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-export default function PersistentDrawerLeft() {
+export default function PersistentDrawerLeft(products) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -83,37 +84,57 @@ export default function PersistentDrawerLeft() {
         <Divider />
         <List>
             <ListItem button>
-                <ListItemText>Computers</ListItemText>
+                <Link to = {"/category/computers"}>
+                  <ListItemText>Computers</ListItemText>
+                </Link>
             </ListItem>
             <ListItem button>
-                <ListItemText>Computer Components</ListItemText>
+                <Link to = "/category/computercomponents">
+                  <ListItemText>Computer Components</ListItemText>
+                </Link>
             </ListItem>
             <ListItem button>
-                <ListItemText>Office Electronics</ListItemText>
-            </ListItem>
-            <Divider/>
-            <ListItem button>
-                <ListItemText>TV & Video</ListItemText>
-            </ListItem>
-            <ListItem button>
-                <ListItemText>Cell Phones</ListItemText>
-            </ListItem>
-            <Divider/>
-            <ListItem button>
-                <ListItemText>Home Audio</ListItemText>
-            </ListItem>
-            <ListItem button>
-                <ListItemText>Headphones</ListItemText>
+                <Link to = "/category/officeelectronics">
+                  <ListItemText>Office Electronics</ListItemText>
+                </Link>
             </ListItem>
             <Divider/>
             <ListItem button>
-                <ListItemText>Consoles</ListItemText>
+                <Link to = "/category/tvvideo">
+                  <ListItemText>TV & Video</ListItemText>
+                </Link>
             </ListItem>
             <ListItem button>
-                <ListItemText>Games</ListItemText>
+                <Link to = "/category/smartphones">
+                  <ListItemText>Smart Phones</ListItemText>
+                </Link>
+            </ListItem>
+            <Divider/>
+            <ListItem button>
+                <Link to = "/category/homeaudio">
+                  <ListItemText>Home Audio</ListItemText>
+                </Link>
             </ListItem>
             <ListItem button>
-                <ListItemText>Video Games Accessories</ListItemText>
+                <Link to = "/category/headphones">
+                  <ListItemText>Headphones</ListItemText>
+                </Link>
+            </ListItem>
+            <Divider/>
+            <ListItem button>
+                <Link to = "/category/consoles">
+                  <ListItemText>Consoles</ListItemText>
+                </Link>
+            </ListItem>
+            <ListItem button>
+                <Link to = "/category/games">
+                  <ListItemText>Games</ListItemText>
+                </Link>
+            </ListItem>
+            <ListItem button>
+                <Link to = "/category/videogamesaccesories">
+                  <ListItemText>Video Games Accessories</ListItemText>
+                </Link>
             </ListItem>
         </List>
       </Drawer>

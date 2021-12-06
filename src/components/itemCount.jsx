@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from '@mui/material/Button';
 import { styled } from '@mui/styles';
+import { Link } from "react-router-dom";
 
 const ButtonAddCart = styled (Button) ({
     background: 'rgb(6, 4, 95)',
@@ -39,16 +40,30 @@ const ItemCount = ({ stock, initial, setQuantity }) => {
         return (
                 <div className = "card-btn">
                     <div className = "card-count">
-                        <Button variant = "text" onClick = { addItem }>+</Button>
+                        <Button variant = "text" onClick = { addItem } >+</Button>
                         <p>{count}</p>
-                        <Button variant = "text" onClick = { removeItem }>-</Button>
+                        <Button variant = "text" onClick = { removeItem } >-</Button>
                     </div>
-                    <ButtonAddCart variant = "contained" onClick = { onAdd }>Add to cart</ButtonAddCart>
+                    <ButtonAddCart variant = "contained" onClick = { onAdd } >Add to cart</ButtonAddCart>
+                    <Link className = "card-btn-back" to = "/">
+                        <Button variant = "contained">Back to home</Button>
+                    </Link>
                 </div>
         );
     } else {
-        return (<></>);
-  }
+        return (
+                <div className = "card-btn-finish">
+                    <Button variant="contained">
+                        <Link to={`/cart`}>
+                            Finish order
+                        </Link>
+                    </Button>
+                    <Link to = "/">
+                        <Button variant = "contained">Back to home</Button>
+                    </Link>
+                </div>
+                );
+  };
 };
 
 export default ItemCount;

@@ -16,6 +16,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import DrawerMenu from './DrawerMenu';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -158,15 +159,17 @@ export default function NavBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar  className="navBar">
-          <DrawerMenu/>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            GREAT BUY SHOP
+          <DrawerMenu />
+          <Link className="navbar-title" to = "/">
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: 'none', sm: 'block' } }}
+            >
+              GREAT BUY SHOP
           </Typography>
+          </Link>
           <Box sx={{ flexGrow: 1 }} />
           <Search>
             <SearchIconWrapper>
