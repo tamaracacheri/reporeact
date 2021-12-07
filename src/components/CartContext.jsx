@@ -34,8 +34,16 @@ export const CartProvider = ({ children }) => {
         return flag;
     };
 
+    const totalPrice = () => {
+        let finalPrice = 0;
+        cart.map(value => {
+            finalPrice = finalPrice + (value.item.item.price + value.quantity);
+            return finalPrice;
+        })
+    };
+
     return (
-        <CartContext.Provider value = {{ addItem, removeItem, clear, insInCart }}>
+        <CartContext.Provider value = {{ addItem, removeItem, clear, insInCart, totalPrice, cart }}>
             { children }
         </CartContext.Provider>
     )
