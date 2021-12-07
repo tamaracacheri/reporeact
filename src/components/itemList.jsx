@@ -1,6 +1,6 @@
 import Item from "./Item";
 
-const ItemList = ({products}) => {
+const ItemList = ({ products }) => {
     return (
         <>
             {products.map(product => {
@@ -8,11 +8,11 @@ const ItemList = ({products}) => {
                     <Item
                     key = {product.id}
                     id = {product.id}
+                    title = {product.title}
                     description = {product.description}
                     pictureUrl = {product.pictureUrl}
-                    price = {product.price}
                     stock = {product.stock}
-                    title = {product.title}
+                    price = {product.price}
                     />
                 )
             })}

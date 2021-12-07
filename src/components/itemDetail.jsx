@@ -1,18 +1,9 @@
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 import ItemCount from './ItemCount';
 
 const ItemDetail = ( item ) => {
 
-    const { title, price, stock, pictureUrl } = item.item;
-
-    const [quantity, setQuantity] = useState(0);
-
-    useEffect(() => {
-        let msg = `You have added ${quantity} item`
-        if (quantity !== 0) {
-            quantity > 1 ? alert(msg+'s'): alert(msg);
-        }
-    }, [quantity])
+    const { id, title, price, stock, pictureUrl } = item.item;
     
     return (
         <>
@@ -31,9 +22,10 @@ const ItemDetail = ( item ) => {
                 <p className = "detail-card-price">Price: ${ price }</p>
                 <p className = "detail-card-stock">Stock: { stock }</p>
                 <ItemCount 
+                    item = { item }
+                    id = { id }
                     stock = { stock }
                     initial = { 1 }
-                    setQuantity = { setQuantity }
                 />
             </div>
         </>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from '@mui/material/Button';
 import { styled } from '@mui/styles';
 import { Link } from "react-router-dom";
+import { UseCart } from "./CartContext";
 
 const ButtonAddCart = styled (Button) ({
     background: 'rgb(6, 4, 95)',
@@ -11,43 +12,64 @@ const ButtonAddCart = styled (Button) ({
      },
 });
 
-const ItemCount = ({ stock, initial, setQuantity }) => {
+const ItemCount = ({ item, id, stock, initial }) => {
     
     const [count, setCount] = useState(initial);
 
-    const [rendCounter, setRendCounter] = useState(true);
+    const [renderCounter, setRenderCounter] = useState(true);
+
+    const [ quantity, setQuantity ] = useState(1);
+
+    const { addItem, consoleCart, removeItem, clear } = UseCart();
     
-    const addItem = () => {
+    const addItemQuantity = () => {
         const newCount = count + 1;
-        if (newCount <= stock) {
+        if ( newCount <= stock ) {
             setCount(newCount);
         };
     };
 
-    const removeItem = () => {
+    const removeItemQuantity = () => {
         const newCount = count - 1;
-        if (newCount >= initial) {
+        if ( newCount >= initial ) {
             setCount(newCount);
         };
     };
 
     const onAdd = () => {
         setQuantity(count);
-        setRendCounter(false);
+        addItem(item, quantity, count);
+        setRenderCounter(false);
     };
 
-    if (rendCounter) {
+    const quitItem = () => {
+        removeItem(id);
+        setRenderCounter(true);
+    };
+
+    const clearCart = () => {
+        clear();
+    }
+
+    const viewCart = () => {
+        consoleCart();
+    }
+
+    if ( renderCounter ) {
         return (
                 <div className = "card-btn">
                     <div className = "card-count">
-                        <Button variant = "text" onClick = { addItem } >+</Button>
+                        <Button variant = "text" onClick = { addItemQuantity } >+</Button>
                         <p>{count}</p>
-                        <Button variant = "text" onClick = { removeItem } >-</Button>
+                        <Button variant = "text" onClick = { removeItemQuantity } >-</Button>
                     </div>
                     <ButtonAddCart variant = "contained" onClick = { onAdd } >Add to cart</ButtonAddCart>
+                    <Button variant = "contained" onClick = { quitItem }>Remove item</Button>
+                    <Button variant = "contained" onClick = { clearCart }>Clear cart</Button>
                     <Link className = "card-btn-back" to = "/">
                         <Button variant = "contained">Back to home</Button>
                     </Link>
+                    <Button onClick = { viewCart } >Console log cart</Button>
                 </div>
         );
     } else {
@@ -58,12 +80,14 @@ const ItemCount = ({ stock, initial, setQuantity }) => {
                             Finish order
                         </Link>
                     </Button>
+                    <Button variant = "contained" onClick = { quitItem }>Remove item</Button>
                     <Link to = "/">
                         <Button variant = "contained">Back to home</Button>
                     </Link>
+                    <Button onClick = { viewCart } >Console log cart</Button>
                 </div>
                 );
-  };
+    };
 };
 
 export default ItemCount;
