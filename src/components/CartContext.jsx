@@ -34,12 +34,8 @@ export const CartProvider = ({ children }) => {
         return flag;
     };
 
-    const consoleCart = () => {
-        console.log(cart);
-    }
-
     return (
-        <CartContext.Provider value = {{ addItem, removeItem, clear, consoleCart, insInCart }}>
+        <CartContext.Provider value = {{ addItem, removeItem, clear, insInCart }}>
             { children }
         </CartContext.Provider>
     )

@@ -20,7 +20,7 @@ const ItemCount = ({ item, id, stock, initial }) => {
 
     const [ quantity, setQuantity ] = useState(1);
 
-    const { addItem, consoleCart, removeItem, clear } = UseCart();
+    const { addItem, removeItem, clear } = UseCart();
     
     const addItemQuantity = () => {
         const newCount = count + 1;
@@ -51,10 +51,6 @@ const ItemCount = ({ item, id, stock, initial }) => {
         clear();
     }
 
-    const viewCart = () => {
-        consoleCart();
-    }
-
     if ( renderCounter ) {
         return (
                 <div className = "card-btn">
@@ -69,7 +65,6 @@ const ItemCount = ({ item, id, stock, initial }) => {
                     <Link className = "card-btn-back" to = "/">
                         <Button variant = "contained">Back to home</Button>
                     </Link>
-                    <Button onClick = { viewCart } >Console log cart</Button>
                 </div>
         );
     } else {
@@ -84,7 +79,6 @@ const ItemCount = ({ item, id, stock, initial }) => {
                     <Link to = "/">
                         <Button variant = "contained">Back to home</Button>
                     </Link>
-                    <Button onClick = { viewCart } >Console log cart</Button>
                 </div>
                 );
     };
