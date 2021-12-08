@@ -1,18 +1,34 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { IconButton } from '@mui/material';
+import Badge from '@mui/material/Badge';
+import { Link } from "react-router-dom";
+import { UseCart } from "./CartContext";
+
 
 const CartWidget = () => {
+
+    const { itemsSumatoryInCart } = UseCart();
+
+    if ( itemsSumatoryInCart() > 0) {
     return ( 
-        <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ ml: 2 }}
-        >
-            <ShoppingCartIcon />
-        </IconButton>
+        <Link to = "/cart">
+            <IconButton
+                size = "large"
+                edge = "start"
+                color = "primary"
+                aria-label = "menu"
+                sx = {{ ml: 2 }}
+                onClick = { itemsSumatoryInCart }
+            >
+                <Badge badgeContent = { itemsSumatoryInCart() } color="error">
+                    <ShoppingCartIcon />
+                </Badge>
+            </IconButton>
+        </Link>
     );
-}
+    } else {
+        return null;
+    };
+};
 
 export default CartWidget;

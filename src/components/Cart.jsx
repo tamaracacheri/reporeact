@@ -4,23 +4,32 @@ import { UseCart } from "./CartContext"
 
 export default function Cart() {
     
-    const { cart, removeItem } = UseCart();
+    const { cart, removeItem, clearCart, totalPrice } = UseCart();
     
     if(cart.length > 0) {
         return (
-            cart.map((value) => {
-                return (
-                    <div className = "card-item" key = { value.item.item.id } >
-                        <img className = "card-img" src = { value.item.item.pictureUrl } alt = { value.item.item.title } ></img>
-                        <h3>{ value.item.item.title }</h3>
-                        <p>Quantity: { value.quantity }</p>
-                        <p>Price: ${ value.item.item.price }</p>
-                        <Button onClick = { () => removeItem(value.item.item.id) } >Remove Item</Button>
-                    </div>
-                );
-            })
+            <>
+                <Link to = "/">
+                    <Button>
+                        Back to homepage
+                    </Button>
+                </Link>
+                {cart.map((value) => {
+                    const newValue = value.item.item;
+                    return (
+                        <div className = "card-item" key = { newValue.id } >
+                            <img className = "card-img" src = { newValue.pictureUrl } alt = { newValue.title } ></img>
+                            <h3>{ newValue.title }</h3>
+                            <p>Quantity: { value.quantity }</p>
+                            <p>Price: ${ newValue.price }</p>
+                            <Button onClick = { () => removeItem(newValue.id) } >Remove Item</Button>
+                        </div>
+                    );
+                })}
+                <Button onClick = { clearCart } >Clear cart</Button>
+                <p>Total: { totalPrice() }</p>
+            </>
         );
-    
     } else {
         return (
             <div>

@@ -18,27 +18,28 @@ const ItemCount = ({ item, id, stock, initial }) => {
 
     const [renderCounter, setRenderCounter] = useState(true);
 
-    const [ quantity, setQuantity ] = useState(1);
+    const [ quantity, setQuantity ] = useState(initial);
 
-    const { addItem, removeItem, clear } = UseCart();
+    const { addItem, removeItem } = UseCart();
     
     const addItemQuantity = () => {
-        const newCount = count + 1;
+        let newCount = count + 1;
         if ( newCount <= stock ) {
             setCount(newCount);
+            setQuantity(newCount);
         };
     };
 
     const removeItemQuantity = () => {
-        const newCount = count - 1;
+        let newCount = count - 1;
         if ( newCount >= initial ) {
             setCount(newCount);
+            setQuantity(newCount);
         };
     };
 
     const onAdd = () => {
-        setQuantity(count);
-        addItem(item, quantity, count);
+        addItem(item, quantity);
         setRenderCounter(false);
     };
 
@@ -47,13 +48,9 @@ const ItemCount = ({ item, id, stock, initial }) => {
         setRenderCounter(true);
     };
 
-    const clearCart = () => {
-        clear();
-    }
-
     if ( renderCounter ) {
         return (
-                <div className = "card-btn">
+                <div className = "card-btn-container">
                     <div className = "card-count">
                         <Button variant = "text" onClick = { addItemQuantity } >+</Button>
                         <p>{count}</p>
@@ -61,23 +58,22 @@ const ItemCount = ({ item, id, stock, initial }) => {
                     </div>
                     <ButtonAddCart variant = "contained" onClick = { onAdd } >Add to cart</ButtonAddCart>
                     <Button variant = "contained" onClick = { quitItem }>Remove item</Button>
-                    <Button variant = "contained" onClick = { clearCart }>Clear cart</Button>
                     <Link className = "card-btn-back" to = "/">
-                        <Button variant = "contained">Back to home</Button>
+                        <Button variant = "contained">Continue buying</Button>
                     </Link>
                 </div>
         );
     } else {
         return (
-                <div className = "card-btn-finish">
+                <div className = "card-btn-container">
                     <Button variant="contained">
-                        <Link to={`/cart`}>
+                        <Link className = "card-btn-finish" to={`/cart`}>
                             Finish order
                         </Link>
                     </Button>
                     <Button variant = "contained" onClick = { quitItem }>Remove item</Button>
                     <Link to = "/">
-                        <Button variant = "contained">Back to home</Button>
+                        <Button variant = "contained">Continue buying</Button>
                     </Link>
                 </div>
                 );

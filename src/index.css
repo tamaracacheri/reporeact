@@ -102,7 +102,7 @@ code {
 .card-price {
   font-weight: 900;
 }
-.card-btn {
+.card-btn-container {
   display: flex;
   flex-direction: column;
   max-width: fit-content;
@@ -120,9 +120,7 @@ code {
   flex-direction: column;
 }
 .card-btn-finish {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
+  color: #fff;
 }
 .cart-container {
   display: flex;
