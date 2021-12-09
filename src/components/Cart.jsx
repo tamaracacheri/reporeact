@@ -18,7 +18,7 @@ export default function Cart() {
                     const newValue = value.item.item;
                     return (
                         <div className = "card-item" key = { newValue.id } >
-                            <img className = "card-img" src = { newValue.pictureUrl } alt = { newValue.title } ></img>
+                            <img className = "card-img" src = { newValue.img } alt = { newValue.title } ></img>
                             <h3>{ newValue.title }</h3>
                             <p>Quantity: { value.quantity }</p>
                             <p>Price: ${ newValue.price }</p>
@@ -27,7 +27,7 @@ export default function Cart() {
                     );
                 })}
                 <Button onClick = { clearCart } >Clear cart</Button>
-                <p>Total: { totalPrice() }</p>
+                <p>Total: $ { totalPrice() }</p>
             </>
         );
     } else {

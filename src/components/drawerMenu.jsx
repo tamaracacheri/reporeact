@@ -76,13 +76,13 @@ export default function PersistentDrawerLeft(products) {
         anchor="left"
         open={open}
       >
-        <DrawerHeader>
+        <DrawerHeader sx={{ backgroundColor: "#fff45c" }}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
+        <List sx={{ color: "black", backgroundColor: "#fff45c" }}>
             <ListItem button>
                 <Link to = {"/category/computers"}>
                   <ListItemText>Computers</ListItemText>

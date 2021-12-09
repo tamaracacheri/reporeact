@@ -3,7 +3,7 @@ import ItemCount from './ItemCount';
 
 const ItemDetail = ( item ) => {
 
-    const { id, title, price, stock, pictureUrl } = item.item;
+    const { id, title, price, stock, img } = item.item;
     
     return (
         <>
@@ -17,7 +17,7 @@ const ItemDetail = ( item ) => {
                 <h2 className = "detail-subtitle">Make the difference</h2>
             </div>
             <div className = "detail-card-item">
-                <img className = "detail-card-img" src={ pictureUrl } alt={ pictureUrl }></img>
+                <img className = "detail-card-img" src={ img } alt={ img }></img>
                 <p className = "detail-card-title">{ title }</p>
                 <p className = "detail-card-price">Price: ${ price }</p>
                 <p className = "detail-card-stock">Stock: { stock }</p>

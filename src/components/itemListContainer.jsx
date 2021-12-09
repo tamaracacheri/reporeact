@@ -1,6 +1,7 @@
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-import getProducts from '../services/promise';
+//import getProducts from '../services/promise';
 import ItemList from './ItemList';
 
 const ItemListContainer = ({ title }) => {
@@ -9,13 +10,34 @@ const ItemListContainer = ({ title }) => {
 
     const { category } = useParams();
 
-    useEffect(() => {
+    /*
+        get items local Json
+    */
+
+    /*    useEffect(() => {
         getProducts
         .then(res => {
             setProducts(res.filter((prod) => prod.category === category))
         })
         .catch(err => alert("Error"))
-    }, [ category ]);
+    }, [ category ]); */
+
+    useEffect(() => {
+
+        const db = getFirestore();
+        const itemsCollection = collection(db, "items");
+
+        if(category === undefined) {
+            getDocs(itemsCollection).then(snapshot => {
+                setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+            })
+        } else {
+            let q = query(itemsCollection, where("category", "==", category));
+            getDocs(q).then(snapshot => {
+                setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+            });
+        };
+    }, [category]);
 
     let categoryTitle = category;
 

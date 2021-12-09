@@ -14,8 +14,13 @@ export const CartProvider = ({ children }) => {
             setCart([ ...cart, { item, quantity }]);
         } else {
             let index = cart.findIndex((prod) => prod.item.item.id === item.item.id);
-            cart[index].quantity = cart[index].quantity + quantity;
-        }
+            let newQuantity = cart[index].quantity + quantity;
+            if ( newQuantity <= item.item.stock ) {
+                cart[index].quantity = newQuantity;
+            } else {
+                alert("There is not enough stock of this product. Try to buy less quantity");
+            };
+        };
     };
 
     const removeItem = ( id ) => {

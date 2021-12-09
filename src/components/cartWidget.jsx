@@ -20,7 +20,14 @@ const CartWidget = () => {
                 sx = {{ ml: 2 }}
                 onClick = { itemsSumatoryInCart }
             >
-                <Badge badgeContent = { itemsSumatoryInCart() } color="error">
+                <Badge
+                    badgeContent = { itemsSumatoryInCart() }
+                    color="error"
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right',
+                      }}
+                >
                     <ShoppingCartIcon />
                 </Badge>
             </IconButton>

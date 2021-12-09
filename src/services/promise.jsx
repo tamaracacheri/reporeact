@@ -7,4 +7,4 @@ const getProducts = new Promise((resolve, reject) => {
     }, 2000);
 });
 
-export default getProducts
+export default getProducts;

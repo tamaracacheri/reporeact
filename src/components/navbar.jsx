@@ -135,7 +135,7 @@ export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar  className="navBar">
+        <Toolbar sx={{ color: "black" }} className="navBar">
           <DrawerMenu />
           <Link className="navbar-title" to = "/">
             <Typography
@@ -144,7 +144,7 @@ export default function NavBar() {
               component="div"
               sx={{ display: { xs: 'none', sm: 'block' } }}
             >
-              GREAT BUY SHOP
+              Great Buy!
           </Typography>
           </Link>
           <Box sx={{ flexGrow: 1 }} />
@@ -155,10 +155,11 @@ export default function NavBar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
+              sx={{ color: "black" }}
             />
           </Search>
           <CartWidget/>
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }}}>
             <IconButton
               size="large"
               edge="end"
@@ -171,7 +172,7 @@ export default function NavBar() {
               <AccountCircle />
             </IconButton>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: 'flex', md: 'none' }}}>
             <IconButton
               size="large"
               aria-label="show more"

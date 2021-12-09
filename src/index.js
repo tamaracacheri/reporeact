@@ -4,6 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyANR9Y-UrfsOpgMRJEjyAin51CQFho5ZiM",
+  authDomain: "great-buy-shop.firebaseapp.com",
+  projectId: "great-buy-shop",
+  storageBucket: "great-buy-shop.appspot.com",
+  messagingSenderId: "226199256040",
+  appId: "1:226199256040:web:8dd0a830314b0fc44d825d"
+};
+
+initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <BrowserRouter>
@@ -12,7 +24,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
