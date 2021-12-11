@@ -5,34 +5,31 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
+  const [item, setItem] = useState({});
 
-    const [item, setItem] = useState({});
+  const { id } = useParams();
 
-    const { id } = useParams();
-
-    /*
+  /*
         get items local Json
     */
 
-    /*  useEffect(() => {
+  /*  useEffect(() => {
         getProducts.then((res) => {
             setItem(res.find((prod) => prod.id === parseInt(id)));
         });
     }, [id]); */
 
-    useEffect(() => {
+  useEffect(() => {
+    const db = getFirestore();
 
-        const db = getFirestore();
-        
-        const docRef = doc(db, "items", id);
+    const docRef = doc(db, "items", id);
 
-        getDoc(docRef).then((snapshot) => {
-            setItem({ id: snapshot.id, ...snapshot.data() })
-        })
+    getDoc(docRef).then((snapshot) => {
+      setItem({ id: snapshot.id, ...snapshot.data() });
+    });
+  }, [id]);
 
-    }, [ id ]);
-
-    return <ItemDetail item = { item } />;
+  return <ItemDetail item={item} />;
 };
 
 export default ItemDetailContainer;
