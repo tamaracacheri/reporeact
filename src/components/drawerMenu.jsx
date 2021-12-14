@@ -4,13 +4,11 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -59,7 +57,7 @@ export default function PersistentDrawerLeft(products) {
         aria-label="open drawer"
         onClick={handleDrawerOpen}
         edge="start"
-        sx={{ mr: 2, ...(open && { display: "none" }) }}
+        sx={{ color: "#000", mr: 2, ...(open && { display: "none" }) }}
       >
         <MenuIcon />
       </IconButton>
@@ -76,7 +74,7 @@ export default function PersistentDrawerLeft(products) {
         anchor="left"
         open={open}
       >
-        <DrawerHeader sx={{ backgroundColor: "#fff45c" }}>
+        <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
@@ -85,73 +83,55 @@ export default function PersistentDrawerLeft(products) {
             )}
           </IconButton>
         </DrawerHeader>
-        <Divider />
-        <List sx={{ backgroundColor: "#fff45c" }}>
+        <List>
           <ListItem button>
             <Link to={"/category/computers"}>
-              <ListItemText className="drawermenu-link">Computers</ListItemText>
+              <li className="drawermenu-link">Computers</li>
             </Link>
           </ListItem>
           <ListItem button>
             <Link to="/category/computercomponents">
-              <ListItemText className="drawermenu-link">
-                Computer Components
-              </ListItemText>
+              <li className="drawermenu-link">Computer Components</li>
             </Link>
           </ListItem>
           <ListItem button>
             <Link to="/category/officeelectronics">
-              <ListItemText className="drawermenu-link">
-                Office Electronics
-              </ListItemText>
+              <li className="drawermenu-link">Office Electronics</li>
             </Link>
           </ListItem>
-          <Divider />
           <ListItem button>
             <Link to="/category/tvvideo">
-              <ListItemText className="drawermenu-link">
-                TV & Video
-              </ListItemText>
+              <li className="drawermenu-link">TV & Video</li>
             </Link>
           </ListItem>
           <ListItem button>
             <Link to="/category/smartphones">
-              <ListItemText className="drawermenu-link">
-                Smart Phones
-              </ListItemText>
+              <li className="drawermenu-link">Smart Phones</li>
             </Link>
           </ListItem>
-          <Divider />
           <ListItem button>
             <Link to="/category/homeaudio">
-              <ListItemText className="drawermenu-link">
-                Home Audio
-              </ListItemText>
+              <li className="drawermenu-link">Home Audio</li>
             </Link>
           </ListItem>
           <ListItem button>
             <Link to="/category/headphones">
-              <ListItemText className="drawermenu-link">
-                Headphones
-              </ListItemText>
+              <li className="drawermenu-link">Headphones</li>
             </Link>
           </ListItem>
-          <Divider />
           <ListItem button>
             <Link to="/category/consoles">
-              <ListItemText className="drawermenu-link">Consoles</ListItemText>
+              <li className="drawermenu-link">Consoles</li>
             </Link>
           </ListItem>
           <ListItem button>
             <Link to="/category/games">
-              <ListItemText className="drawermenu-link">Games</ListItemText>
+              <li className="drawermenu-link">Games</li>
             </Link>
           </ListItem>
           <ListItem button>
             <Link to="/category/videogamesaccesories">
-              <ListItemText className="drawermenu-link">
-                Video Games Accessories
-              </ListItemText>
+              <li className="drawermenu-link">Video Games Accessories</li>
             </Link>
           </ListItem>
         </List>

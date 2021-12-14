@@ -128,12 +128,12 @@ export default function Cart() {
   } else {
     return (
       <>
-      <div>
-        <p>Nothing here.</p>
-        <Link to="/">
-          <Button>Back to homepage</Button>
-        </Link>
-      </div>
+        <div>
+          <p>Nothing here.</p>
+          <Link to="/">
+            <Button>Back to homepage</Button>
+          </Link>
+        </div>
         <Collapse in={confirmation}>
           {orderId !== undefined && (
             <Alert
@@ -150,11 +150,12 @@ export default function Cart() {
                 </IconButton>
               }
             >
-              Thank you very much for your purchase! your order number is: {orderId}
+              Thank you very much for your purchase! Your order number is:{" "}
+              {orderId}. The shipment will arrive in 3-5 days.
             </Alert>
           )}
         </Collapse>
-        </>
+      </>
     );
   }
 }

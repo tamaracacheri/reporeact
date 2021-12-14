@@ -11,11 +11,10 @@ const CartWidget = () => {
     return (
       <Link to="/cart">
         <IconButton
+          className="cartwidget"
           size="large"
           edge="start"
-          color="primary"
           aria-label="menu"
-          sx={{ ml: 2 }}
           onClick={itemsSumatoryInCart}
         >
           <Badge
