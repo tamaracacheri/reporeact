@@ -62,9 +62,6 @@ const ItemCount = ({ item, id, stock, initial }) => {
         <ButtonAddCart variant="contained" onClick={onAdd}>
           Add to cart
         </ButtonAddCart>
-        <Button variant="contained" onClick={quitItem}>
-          Remove item
-        </Button>
         <Link className="card-btn-back" to="/">
           <Button variant="contained">Continue buying</Button>
         </Link>
@@ -73,12 +70,12 @@ const ItemCount = ({ item, id, stock, initial }) => {
   } else {
     return (
       <div className="card-btn-container">
-        <Button variant="contained">
+        <ButtonAddCart variant="contained">
           <Link className="card-btn-finish" to={`/cart`}>
             Finish order
           </Link>
-        </Button>
-        <Button variant="contained" onClick={quitItem}>
+        </ButtonAddCart>
+        <Button variant="contained" color="error" onClick={quitItem}>
           Remove item
         </Button>
         <Link to="/">

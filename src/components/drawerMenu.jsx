@@ -83,7 +83,11 @@ export default function PersistentDrawerLeft(products) {
             )}
           </IconButton>
         </DrawerHeader>
-        <List>
+        <List
+          onClick={() => {
+            handleDrawerClose();
+          }}
+        >
           <ListItem button>
             <Link to={"/category/computers"}>
               <li className="drawermenu-link">Computers</li>

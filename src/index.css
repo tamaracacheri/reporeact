@@ -1,3 +1,7 @@
+/*
+  RESET STYLES
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -5,87 +9,96 @@
   text-decoration: none;
 }
 
+/*
+  GENERAL SETTINGS
+*/
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif, 'Nunito Sans', sans-serif;
-  ;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif, "Nunito Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.circular-progress-container {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  NAVBAR COMPONENT
+*/
 
 .navbar-title {
   color: #000;
 }
 
-.cartwidget {
-  color: #000;
-}
-
 .drawermenu-link {
   color: #000;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .searchIcon {
   color: #000;
 }
 
-.index-title,
-.index-subtitle,
-.category-title,
-.category-subtitle,
-.detail-title,
-.detail-subtitle {
+/*
+  TITLES
+*/
+
+.category-subtitle {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 5rem;
-  font-size: 3vw;
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 5vw;
+  font-weight: 900;
   color: #000;
 }
 
-.index-subtitle,
-.category-subtitle,
-.detail-subtitle {
-  top: 9.5rem;
-  font-size: 2.2vw;
-}
-
-.detail-banner {
-  height: 20rem;
-}
+/*
+  BANNERS
+*/
 
 .index-banner-mobile,
 .index-banner-iphone-mobile,
-.category-banner-mobile,
-.detail-banner-mobile {
+.category-banner-mobile {
   width: 100%;
   position: relative;
 }
 
 .index-banner-iphone-desktop,
 .index-banner-desktop,
-.category-banner-desktop,
-.detail-banner-desktop {
+.category-banner-desktop {
   width: 100%;
   position: relative;
   display: none;
 }
 
+.category-banner-img {
+  bottom: 20rem;
+}
+
+/*
+  HOMEPAGE SECTION
+*/
+
 .index-banner-title {
   position: absolute;
   width: 80%;
-  top: 50vh;
+  top: 85vw;
   left: 10vw;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   text-align: center;
   font-size: 12vw;
   font-weight: 900;
@@ -94,9 +107,9 @@ code {
 .index-banner-body {
   position: absolute;
   width: 80%;
-  top: 75vh;
+  top: 130vw;
   left: 10vw;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   text-align: center;
   font-size: 5vw;
   font-weight: 900;
@@ -111,7 +124,7 @@ code {
 .index-banner-samsung {
   height: 90vh;
   position: relative;
-  right: 70vw;
+  right: 300px;
 }
 
 .index-banner-samsung-title {
@@ -119,7 +132,7 @@ code {
   top: 7vh;
   right: 12vw;
   color: #fff;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 8vw;
   font-weight: 900;
 }
@@ -129,13 +142,13 @@ code {
   top: 15vh;
   left: 35vw;
   color: #fff;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 3vw;
   font-weight: 900;
-  letter-spacing: .16em;
+  letter-spacing: 0.16em;
   padding: 1vh 6vw;
   border: 1px #fff solid;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .index-banner-samsung-footer {
@@ -143,7 +156,7 @@ code {
   bottom: 10vh;
   left: 22vw;
   color: #fff;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 7vw;
   font-weight: 900;
 }
@@ -151,26 +164,22 @@ code {
 .index-item-title {
   width: 100%;
   margin-top: 5vh;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   text-align: center;
   font-size: 6vw;
   font-weight: 900;
 }
 
-.category-banner-img {
-  bottom: 20rem;
-}
-
-.detail-banner-img {
-  bottom: 42rem;
-}
+/*
+  CARD ITEM COMPONENT
+*/
 
 .item-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 5vh 5vw;
+  margin: 0 5vw;
 }
 
 .card-item {
@@ -183,12 +192,12 @@ code {
   margin: 2vh 2vw;
   color: #000;
   border-radius: 10px;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-item:hover {
-  transition: .4s;
+  transition: 0.4s;
   transform: translate(0, -8px);
   box-shadow: 0 0px 11px rgba(33, 33, 33, 0.2);
 }
@@ -233,10 +242,15 @@ code {
   border-bottom-right-radius: 10px;
 }
 
+/*
+  ITEM COUNT COMPONENT
+*/
+
 .card-btn-container {
   display: flex;
   flex-direction: column;
-  max-width: fit-content;
+  justify-content: space-around;
+  height: 20vh;
 }
 
 .card-count {
@@ -244,7 +258,6 @@ code {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5em 0;
   border: 1px solid rgba(6, 4, 95, 0.5);
 }
 
@@ -257,22 +270,196 @@ code {
   color: #fff;
 }
 
+/*
+  CART COMPONENT
+*/
+
 .cart-container {
+  margin: 50px 20vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.cart-details {
+.cart-title-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #2183a2;
+}
+
+.cart-item-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 15rem;
+  margin: 2vh 2vw;
+  border-radius: 10px;
+  font-family: "Nunito Sans", sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-title {
+  text-align: center;
+  width: 80%;
+}
+
+.cart-clearCart,
+.cart-finishOrder {
+  margin: 20px 0;
+  background-color: #a22121;
+  color: #fff;
+  padding: 5px 20px;
+  font-weight: 900;
+  font-size: 13px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgb(255, 81, 81);
+}
+
+.cart-item-img {
+  max-height: 80px;
+  margin: 10px 0;
+}
+
+.cart-item-quantity {
+  top: 0;
+  left: 100%;
+}
+
+.cart-item-price {
+  font-weight: 900;
+}
+
+.cart-item-footer {
+  width: 100%;
+  color: #fff;
+  background-color: #2183a2;
+  padding: 15px;
+  margin-top: 5px;
+  border: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: center;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.cart-total-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Nunito Sans", sans-serif;
+  border-top: 1px solid #2183a2;
+  margin: 10px 0;
+  padding-top: 10px;
+}
+
+.cart-total-values {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-weight: 900;
+}
+
+.cart-total-price {
+  margin-top: 5px;
+  color: #a22121;
+  font-weight: 900;
+}
+
+.cart-empty {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: "Nunito Sans", sans-serif;
+  background: rgb(33, 131, 162);
+  background: linear-gradient(
+    0deg,
+    rgba(33, 131, 162, 0.3337710084033614) 38%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.cart-lottie-container {
+  height: 280px;
+}
+
+.cart-lottie-svg {
+  height: 350px;
+}
+
+.cart-empty-title {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.cart-empty-body {
+  width: 80%;
+}
+
+/*
+    DETAIL ITEM COMPONENT
+*/
+
+.detail-background {
+  height: 200px;
+  width: 100vw;
+  position: absolute;
+  top: 56px;
+  background-color: #2183a2;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.detail-card-item {
+  height: 80vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 30px 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .detail-card-img {
-  width: 10vw;
+  max-height: 150px;
+  max-width: 200px;
+}
+
+.detail-card-title {
+  width: 80%;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 5vw;
+  font-weight: 900;
+  text-align: center;
+}
+
+.detail-card-description {
+  color: #b2bec3;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.detail-card-price {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+}
+
+.detail-card-stock {
+  font-family: "Nunito Sans", sans-serif;
 }
 
 @media only screen and (min-width: 480px) {
-
   .index-banner-mobile,
   .index-banner-iphone-mobile,
   .category-banner-mobile,

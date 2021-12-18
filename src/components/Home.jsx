@@ -23,18 +23,21 @@ const Home = ({ title }) => {
 
   return (
     <>
-        <img
-          className="index-banner-mobile"
-          src="https://images.samsung.com/is/image/samsung/assets/uk/cashback-offer/mobile_kv_V6-1.jpg?$FB_TYPE_A_MO_JPG$"
-          alt="banner"
-        ></img>
-        <p className="index-banner-title">Gifts that give back</p>
-        <p className="index-banner-body">Claim cashback with every selected item you buy. With many products to mix and match you can claim an extra £50 cashback each time.</p>
-        <img
-          className="index-banner-desktop"
-          src="https://uidesign.gbtcdn.com/GB/image/2019/20190929_13044/banner.jpg?imbypass=true"
-          alt="banner"
-        ></img>
+      <img
+        className="index-banner-mobile"
+        src="https://images.samsung.com/is/image/samsung/assets/uk/cashback-offer/mobile_kv_V6-1.jpg?$FB_TYPE_A_MO_JPG$"
+        alt="banner"
+      ></img>
+      <p className="index-banner-title">Gifts that give back</p>
+      <p className="index-banner-body">
+        Claim cashback with every selected item you buy. With many products to
+        mix and match you can claim an extra £50 cashback each time.
+      </p>
+      <img
+        className="index-banner-desktop"
+        src="https://uidesign.gbtcdn.com/GB/image/2019/20190929_13044/banner.jpg?imbypass=true"
+        alt="banner"
+      ></img>
       <img
         className="index-banner-iphone-mobile"
         src="https://www.singtel.com/content/dam/singtel/personal/products-services/mobile/info/iphone12/products/iphone12pro/iphone12pro-mobile-02.jpg"
@@ -60,7 +63,7 @@ const Home = ({ title }) => {
         </a>
         <p className="index-banner-samsung-footer">Epic. In every way</p>
       </div>
-        <h3 className="index-item-title">Featured Products</h3>
+      <h3 className="index-item-title">Featured Products</h3>
       <div className="item-container">
         <ItemList products={products} />
       </div>

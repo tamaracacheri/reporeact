@@ -27,7 +27,7 @@ export default function SearchInput() {
     navigate(`/item/${itemSearchId}`);
   };
   return (
-    <Stack sx={{ width: 180 }}>
+    <Stack sx={{ width: 150 }}>
       <Autocomplete
         onChange={(event, searchTitle) => {
           handleSubmit(searchTitle);
