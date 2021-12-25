@@ -1,5 +1,5 @@
 
-![Logo](https://raw.githubusercontent.com/germanrtouron/greatbuyshop/9dff43a5a50233bb1739fe7b3e33c18d4585c60e/src/assets/greatBuyLogo.svg)
+![Logo](https://i.imgur.com/zbiKJxj.png)
 # Great Buy!
 
 Great Buy! es un proyecto iniciado para el curso React Js de Coderhouse.
