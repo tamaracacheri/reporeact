@@ -24,22 +24,27 @@ export default function Cart() {
   const { cart, removeItem, clearCart, totalPrice } = UseCart();
   const inputs = [
     {
-      label: "name",
+      label: "Name",
       name: "name",
     },
     {
-      label: "email",
+      label: "Email",
       name: "email",
     },
     {
-      label: "phone",
+      label: "Phone",
       name: "phone",
+    },
+    {
+      label: "Adress",
+      name: "adress",
     },
   ];
   const [formFields, setFormFields] = useState({
     name: "",
     email: "",
     phone: "",
+    adress: "",
   });
   const onChange = (event) => {
     setFormFields({ ...formFields, [event.target.name]: event.target.value });
@@ -64,6 +69,7 @@ export default function Cart() {
         name: formFields.name,
         phone: formFields.phone,
         email: formFields.email,
+        adress: formFields.adress,
       },
       date: date,
       items: cart,
@@ -78,23 +84,47 @@ export default function Cart() {
     updateDB();
     clearCart();
     setConfirmation(true);
+    setExistsPurchase(true);
   };
   const taskCalc = (totalPrice) => {
-    return totalPrice * 0.06;
+    return (totalPrice * 0.06).toFixed(2);
+  };
+  const totalCalc = (totalPrice) => {
+    return parseInt(totalPrice() + taskCalc(totalPrice()) + 20).toFixed(2);
   };
   const emptyBox = useRef(null);
   useEffect(() => {
-    lottie.loadAnimation({
-      container: emptyBox.current,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      animationData: require("../assets/sadEmptyBox.json"),
-    });
+    lottie.loadAnimation(
+      {
+        container: emptyBox.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: require("../assets/sadEmptyBox.json"),
+      },
+      []
+    );
   });
   const emptyBoxSvg = () => {
-    return <div className="cart-lottie-svg" ref={emptyBox} />;
+    return <div className="cart-lottie-emptyBox" ref={emptyBox} />;
   };
+  const checkOkey = useRef(null);
+  useEffect(() => {
+    lottie.loadAnimation(
+      {
+        container: checkOkey.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: require("../assets/checkOkeyDone.json"),
+      },
+      []
+    );
+  });
+  const checkOkeySvg = () => {
+    return <div className="cart-lottie-check" ref={checkOkey} />;
+  };
+  const [existsPurchase, setExistsPurchase] = useState(false);
   if (cart.length > 0) {
     return (
       <div className="cart-container">
@@ -141,15 +171,16 @@ export default function Cart() {
             <p>{totalPrice()} US$</p>
             <p>{taskCalc(totalPrice())}</p>
             <p>20 US$</p>
-            <p className="cart-total-price">
-              {totalPrice() + taskCalc(totalPrice()) + 20} US$
-            </p>
+            <p className="cart-total-price">{totalCalc(totalPrice)} US$</p>
           </div>
         </div>
         <p className="cart-clearCart" onClick={clearCart}>
           CLEAR CART
         </p>
-        <FormControl>
+        <FormControl sx={{width: "100%"}}>
+          <div className="cart-title-container">
+            <h3>SHIPPING INFORMATION</h3>
+          </div>
           {inputs.map(({ name, label }) => (
             <TextField
               id="outlined-textarea"
@@ -158,17 +189,51 @@ export default function Cart() {
               value={formFields[name]}
               name={name}
               onChange={onChange}
+              sx={{mb: 2}}
             />
           ))}
           <p className="cart-finishOrder" onClick={handleFormSubmit}>
-            Finish order
+            FINISH ORDER
           </p>
         </FormControl>
       </div>
     );
   } else {
-    return (
-      <>
+    if (existsPurchase === true) {
+      return (
+        <>
+          <Collapse in={confirmation}>
+            {orderId !== undefined && (
+              <div className="cart-check">
+                <Alert
+                  severity="success"
+                  action={
+                    <IconButton
+                      aria-label="close"
+                      color="inherit"
+                      size="small"
+                      onClick={() => {
+                        setConfirmation(false);
+                      }}
+                    >
+                      <CloseIcon fontSize="inherit" />
+                    </IconButton>
+                  }
+                >
+                  <AlertTitle>Purchase successfully!</AlertTitle>
+                  Thank you very much for your purchase! Your order number is:{" "}
+                  {orderId}. The shipment will arrive in 3-5 days.
+                </Alert>
+                <div className="cart-lottie-containerCheck">
+                  {checkOkeySvg()}
+                </div>
+              </div>
+            )}
+          </Collapse>
+        </>
+      );
+    } else if (existsPurchase === false) {
+      return (
         <div className="cart-empty">
           <div className="cart-lottie-container">{emptyBoxSvg()}</div>
           <p className="cart-empty-title">Oops... Your cart is empty</p>
@@ -176,30 +241,7 @@ export default function Cart() {
             Looks like you haven't added anything to your cart yet
           </p>
         </div>
-        <Collapse in={confirmation}>
-          {orderId !== undefined && (
-            <Alert
-              severity="success"
-              action={
-                <IconButton
-                  aria-label="close"
-                  color="inherit"
-                  size="small"
-                  onClick={() => {
-                    setConfirmation(false);
-                  }}
-                >
-                  <CloseIcon fontSize="inherit" />
-                </IconButton>
-              }
-            >
-              <AlertTitle>Purchase successfully!</AlertTitle>
-              Thank you very much for your purchase! Your order number is:{" "}
-              {orderId}. The shipment will arrive in 3-5 days.
-            </Alert>
-          )}
-        </Collapse>
-      </>
-    );
+      );
+    }
   }
 }

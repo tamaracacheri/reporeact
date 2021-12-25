@@ -41,6 +41,8 @@ code {
 
 .navbar-title {
   color: #000;
+  display: flex;
+  align-items: center;
 }
 
 .drawermenu-link {
@@ -50,6 +52,10 @@ code {
 
 .searchIcon {
   color: #000;
+}
+
+.greatBuyLogo {
+  display: none;
 }
 
 /*
@@ -309,15 +315,18 @@ code {
 
 .cart-clearCart,
 .cart-finishOrder {
+  width: 100%;
   margin: 20px 0;
   background-color: #a22121;
   color: #fff;
   padding: 5px 20px;
   font-weight: 900;
   font-size: 13px;
+  text-align: center;
   border: none;
   border-radius: 10px;
   box-shadow: 0 0 5px rgb(255, 81, 81);
+  cursor: pointer;
 }
 
 .cart-item-img {
@@ -388,12 +397,32 @@ code {
   );
 }
 
+.cart-check {
+  height: 100vh;
+  background: rgb(237, 247, 237);
+  background: linear-gradient(
+    180deg,
+    rgba(237, 247, 237, 1) 33%,
+    rgba(200, 230, 200, 1) 100%
+  );
+}
+
 .cart-lottie-container {
   height: 280px;
 }
 
-.cart-lottie-svg {
+.cart-lottie-emptyBox {
   height: 350px;
+}
+
+.cart-lottie-containerCheck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-lottie-check {
+  width: 70%;
 }
 
 .cart-empty-title {
@@ -405,6 +434,10 @@ code {
   width: 80%;
 }
 
+.cart-item-footer:hover {
+  cursor: pointer;
+}
+
 /*
     DETAIL ITEM COMPONENT
 */
@@ -413,10 +446,9 @@ code {
   height: 200px;
   width: 100vw;
   position: absolute;
-  top: 56px;
   background-color: #2183a2;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .detail-card-item {
@@ -510,5 +542,44 @@ code {
 
   .index-item-title {
     font-size: 3vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .greatBuyLogo {
+    display: block;
+    width: 100px;
+  }
+
+  .homeIcon {
+    display: none;
+  }
+
+  .category-subtitle {
+    font-size: 4vw;
+  }
+
+  .detail-card-title {
+    font-size: 4vw;
+  }
+
+  .cart-lottie-check {
+    width: 10%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .category-subtitle {
+    font-size: 3vw;
+  }
+
+  .detail-card-title {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .category-subtitle {
+    font-size: 2vw;
   }
 }
