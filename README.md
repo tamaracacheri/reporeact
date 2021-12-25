@@ -1,70 +1,87 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Logo](https://raw.githubusercontent.com/germanrtouron/greatbuyshop/9dff43a5a50233bb1739fe7b3e33c18d4585c60e/src/assets/greatBuyLogo.svg)
+# Great Buy!
 
-## Available Scripts
+Great Buy! es un proyecto iniciado para el curso React Js de Coderhouse.
+Es un ecommerce especializado en productos de tecnología.
+## Paleta de colores
 
-In the project directory, you can run:
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Textos principales | ![#0000](https://via.placeholder.com/10/0000?text=+) #0000 |
+| Textos secundarios | ![#b2bec3](https://via.placeholder.com/10/b2bec3?text=+) #b2bec3 |
+| Color primario | ![#2183a2](https://via.placeholder.com/10/2183a2?text=+) #2183a2 |
+| Botones | ![#a22121](https://via.placeholder.com/10/a22121?text=+) #a22121 |
 
-### `npm start`
+## Capturas de pantalla
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Versión Mobile**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Home:
 
-### `npm test`
+![App Screenshot](https://i.imgur.com/3b9J5On.jpg)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Categorías:
 
-### `npm run build`
+![App Screenshot](https://i.imgur.com/PpYaGjx.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Detalle de producto:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![App Screenshot](https://i.imgur.com/hzlLzm0.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Carrito:
 
-### `npm run eject`
+![App Screenshot](https://i.imgur.com/520AoWE.jpg)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Carrito vacío:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![App Screenshot](https://i.imgur.com/ooXdVm9.jpg)
+## Ejecutar localmente
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Clona el proyecto
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+  git clone https://github.com/germanrtouron/greatbuyshop
+```
 
-## Learn More
+Ve al directorio del proyecto
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  cd greatbuyshop
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Instala dependencias
 
-### Code Splitting
+```bash
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Inicia el servidor
 
-### Analyzing the Bundle Size
+```bash
+  npm run start
+```
+## Tecnologías utilizadas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Cliente:** Html, Css, Javascript, React Js
 
-### Making a Progressive Web App
+**Servidor:** Firebase
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Librerias**: Material React
+## Autor
 
-### Advanced Configuration
+- [@germanrtouron](https://www.github.com/germanrtouron)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## 🚀 Acerca de mí
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Soy Germán Tourón, desarrollador web. Este año me propuse aprender las tecnologías
+correspondientes al área de front-end.
+Estoy muy orgulloso de haber logrado importantes avances, con la gran ayuda de
+Coderhouse, institución en la cual realicé los cursos de Desarrollo web, Javascript,
+y React Js. Mi desafío para el próximo año será estudiar lo referente al área del
+desarrollo back-end.
+## Feedback
 
-### `npm run build` fails to minify
+¿Me ayudarías con tu feedback? Puedes contactarme en germanrtouron@hotmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
