@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import { UseCart } from "./CartContext";
 
 const ButtonAddCart = styled(Button)({
-  background: "rgb(6, 4, 95)",
+  background: "rgb(94, 0, 138)",
   color: "white",
   "&:hover": {
-    background: "rgb(6, 4, 205)",
+    background: "rgb(94, 0, 178)",
   },
+  borderRadius: "10px",
 });
 
 const ItemCount = ({ item, id, stock, initial }) => {
@@ -51,19 +52,29 @@ const ItemCount = ({ item, id, stock, initial }) => {
     return (
       <div className="card-btn-container">
         <div className="card-count">
-          <Button variant="text" onClick={addItemQuantity}>
+          <Button
+            sx={{ color: "white" }}
+            variant="text"
+            onClick={addItemQuantity}
+          >
             +
           </Button>
           <p>{count}</p>
-          <Button variant="text" onClick={removeItemQuantity}>
+          <Button
+            sx={{ color: "white" }}
+            variant="text"
+            onClick={removeItemQuantity}
+          >
             -
           </Button>
         </div>
         <ButtonAddCart variant="contained" onClick={onAdd}>
-          Add to cart
+          Agregar al carrito
         </ButtonAddCart>
         <Link className="card-btn-back" to="/">
-          <Button variant="contained">Continue buying</Button>
+          <Button sx={{ borderRadius: "10px" }} variant="contained">
+            Volver
+          </Button>
         </Link>
       </div>
     );
@@ -72,14 +83,21 @@ const ItemCount = ({ item, id, stock, initial }) => {
       <div className="card-btn-container">
         <ButtonAddCart variant="contained">
           <Link className="card-btn-finish" to={`/cart`}>
-            Finish order
+            Terminar compra
           </Link>
         </ButtonAddCart>
-        <Button variant="contained" color="error" onClick={quitItem}>
-          Remove item
+        <Button
+          sx={{ borderRadius: "10px" }}
+          variant="contained"
+          color="error"
+          onClick={quitItem}
+        >
+          Quitar item
         </Button>
         <Link to="/">
-          <Button variant="contained">Continue buying</Button>
+          <Button sx={{ borderRadius: "10px" }} variant="contained">
+            Volver
+          </Button>
         </Link>
       </div>
     );

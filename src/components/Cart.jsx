@@ -1,4 +1,4 @@
-import { AlertTitle, Badge } from "@mui/material";
+import { AlertTitle } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
@@ -14,8 +14,6 @@ import {
   addDoc,
   updateDoc,
 } from "firebase/firestore";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import lottie from "lottie-web";
 import { useRef } from "react";
 import { useEffect } from "react";
@@ -24,7 +22,7 @@ export default function Cart() {
   const { cart, removeItem, clearCart, totalPrice } = UseCart();
   const inputs = [
     {
-      label: "Name",
+      label: "Nombre",
       name: "name",
     },
     {
@@ -32,11 +30,11 @@ export default function Cart() {
       name: "email",
     },
     {
-      label: "Phone",
+      label: "Teléfono",
       name: "phone",
     },
     {
-      label: "Adress",
+      label: "Dirección",
       name: "adress",
     },
   ];
@@ -87,10 +85,10 @@ export default function Cart() {
     setExistsPurchase(true);
   };
   const taskCalc = (totalPrice) => {
-    return (totalPrice * 0.06).toFixed(2);
+    return parseInt(totalPrice * 0.21).toFixed(2);
   };
   const totalCalc = (totalPrice) => {
-    return parseInt(totalPrice() + taskCalc(totalPrice()) + 20).toFixed(2);
+    return parseInt(totalPrice() + parseInt(taskCalc(totalPrice())) + 100).toFixed(2);
   };
   const emptyBox = useRef(null);
   useEffect(() => {
@@ -105,31 +103,13 @@ export default function Cart() {
       []
     );
   });
-  const emptyBoxSvg = () => {
-    return <div className="cart-lottie-emptyBox" ref={emptyBox} />;
-  };
-  const checkOkey = useRef(null);
-  useEffect(() => {
-    lottie.loadAnimation(
-      {
-        container: checkOkey.current,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        animationData: require("../assets/checkOkeyDone.json"),
-      },
-      []
-    );
-  });
-  const checkOkeySvg = () => {
-    return <div className="cart-lottie-check" ref={checkOkey} />;
-  };
   const [existsPurchase, setExistsPurchase] = useState(false);
   if (cart.length > 0) {
     return (
       <div className="cart-container">
+        <div className="cart-container-1">
         <div className="cart-title-container">
-          <h3>ORDER</h3>
+          <h3>Orden</h3>
         </div>
         {cart.map((value) => {
           const newValue = value.item.item;
@@ -140,46 +120,40 @@ export default function Cart() {
                 src={newValue.img}
                 alt={newValue.title}
               ></img>
-              <Badge
-                className="cart-item-quantity"
-                badgeContent={value.quantity}
-                color="error"
-                sx={{ position: "absolute" }}
-              />
               <h4 className="cart-item-title">{newValue.title}</h4>
-              <p className="cart-item-price">US$ {newValue.price}</p>
+              <p>Cantidad: {value.quantity}</p>
+              <p className="cart-item-price">$ {newValue.price}</p>
               <button
                 className="cart-item-footer"
                 onClick={() => removeItem(newValue.id)}
               >
-                <FontAwesomeIcon
-                  icon={faTrashAlt}
-                  className="cart-item-trash"
-                />
+                Quitar item
               </button>
             </div>
           );
         })}
         <div className="cart-total-container">
-          <div>
+          <div className="cart-container-2">
             <p>Subtotal:</p>
-            <p>Task (6%):</p>
-            <p>Shipping:</p>
+            <p>Impuestos (21%):</p>
+            <p>Envío:</p>
             <p className="cart-total-price">Total:</p>
           </div>
           <div className="cart-total-values">
-            <p>{totalPrice()} US$</p>
-            <p>{taskCalc(totalPrice())}</p>
-            <p>20 US$</p>
-            <p className="cart-total-price">{totalCalc(totalPrice)} US$</p>
+            <p>$ {totalPrice()}</p>
+            <p>$ {taskCalc(totalPrice())}</p>
+            <p>$ 100</p>
+            <p className="cart-total-price">$ {totalCalc(totalPrice)}</p>
           </div>
         </div>
         <p className="cart-clearCart" onClick={clearCart}>
-          CLEAR CART
+          Vaciar carrito
         </p>
-        <FormControl sx={{width: "100%"}}>
+        </div>
+        <div>
+        <FormControl sx={{ width: "100%", alignItems: "center" }}>
           <div className="cart-title-container">
-            <h3>SHIPPING INFORMATION</h3>
+            <h3>Información de envío</h3>
           </div>
           {inputs.map(({ name, label }) => (
             <TextField
@@ -189,19 +163,20 @@ export default function Cart() {
               value={formFields[name]}
               name={name}
               onChange={onChange}
-              sx={{mb: 2}}
+              sx={{ mb: 2, backgroundColor: "white", borderRadius: "10px" }}
             />
           ))}
           <p className="cart-finishOrder" onClick={handleFormSubmit}>
-            FINISH ORDER
+            Comprar
           </p>
         </FormControl>
+        </div>
       </div>
     );
   } else {
     if (existsPurchase === true) {
       return (
-        <>
+        <div className="cart-empty">
           <Collapse in={confirmation}>
             {orderId !== undefined && (
               <div className="cart-check">
@@ -220,25 +195,21 @@ export default function Cart() {
                     </IconButton>
                   }
                 >
-                  <AlertTitle>Purchase successfully!</AlertTitle>
-                  Thank you very much for your purchase! Your order number is:{" "}
-                  {orderId}. The shipment will arrive in 3-5 days.
+                  <AlertTitle>Compra realizada con éxito</AlertTitle>
+                  Muchas gracias por tu compra. Tu número de orden es: {orderId}
+                  .
                 </Alert>
-                <div className="cart-lottie-containerCheck">
-                  {checkOkeySvg()}
-                </div>
               </div>
             )}
           </Collapse>
-        </>
+        </div>
       );
     } else if (existsPurchase === false) {
       return (
         <div className="cart-empty">
-          <div className="cart-lottie-container">{emptyBoxSvg()}</div>
-          <p className="cart-empty-title">Oops... Your cart is empty</p>
+          <p className="cart-empty-title">Carrito vacío</p>
           <p className="cart-empty-body">
-            Looks like you haven't added anything to your cart yet
+            Aún no has agregado items al carrito.
           </p>
         </div>
       );

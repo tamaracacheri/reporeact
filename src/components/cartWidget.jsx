@@ -6,7 +6,7 @@ import { UseCart } from "./CartContext";
 import { styled } from "@mui/styles";
 
 const IconCartWidget = styled(IconButton)({
-  color: "#2183a2",
+  color: "#fff",
 });
 
 const CartWidget = () => {

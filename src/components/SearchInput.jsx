@@ -34,7 +34,7 @@ export default function SearchInput() {
         }}
         freeSolo
         id="free-solo-2-demo"
-        size="small"
+        size="large"
         sx={{
           display: "inline-block",
           "& input": {

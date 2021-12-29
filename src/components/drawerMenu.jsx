@@ -57,7 +57,7 @@ export default function PersistentDrawerLeft(products) {
         aria-label="open drawer"
         onClick={handleDrawerOpen}
         edge="start"
-        sx={{ color: "#000", mr: 2, ...(open && { display: "none" }) }}
+        sx={{ color: "#fff", mr: 2, ...(open && { display: "none" }) }}
       >
         <MenuIcon />
       </IconButton>
@@ -89,53 +89,23 @@ export default function PersistentDrawerLeft(products) {
           }}
         >
           <ListItem button>
-            <Link to={"/category/computers"}>
-              <li className="drawermenu-link">Computers</li>
+            <Link to={"/category/cervezas"}>
+              <li className="drawermenu-link">Cervezas</li>
             </Link>
           </ListItem>
           <ListItem button>
-            <Link to="/category/computercomponents">
-              <li className="drawermenu-link">Computer Components</li>
+            <Link to="/category/tragos">
+              <li className="drawermenu-link">Tragos</li>
             </Link>
           </ListItem>
           <ListItem button>
-            <Link to="/category/officeelectronics">
-              <li className="drawermenu-link">Office Electronics</li>
+            <Link to="/category/vinos">
+              <li className="drawermenu-link">Vinos</li>
             </Link>
           </ListItem>
           <ListItem button>
-            <Link to="/category/tvvideo">
-              <li className="drawermenu-link">TV & Video</li>
-            </Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="/category/smartphones">
-              <li className="drawermenu-link">Smart Phones</li>
-            </Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="/category/homeaudio">
-              <li className="drawermenu-link">Home Audio</li>
-            </Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="/category/headphones">
-              <li className="drawermenu-link">Headphones</li>
-            </Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="/category/consoles">
-              <li className="drawermenu-link">Consoles</li>
-            </Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="/category/games">
-              <li className="drawermenu-link">Games</li>
-            </Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="/category/videogamesaccesories">
-              <li className="drawermenu-link">Video Games Accessories</li>
+            <Link to="/category/espumantes">
+              <li className="drawermenu-link">Espumantes</li>
             </Link>
           </ListItem>
         </List>

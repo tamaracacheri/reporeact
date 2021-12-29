@@ -1,4 +1,4 @@
-import CircularProgress from '@mui/material/CircularProgress';
+import CircularProgress from "@mui/material/CircularProgress";
 import {
   collection,
   getDocs,
@@ -9,6 +9,7 @@ import {
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
+import Footer from "./Footer";
 
 const ItemListContainer = ({ title }) => {
   const [products, setProducts] = useState([]);
@@ -62,13 +63,14 @@ const ItemListContainer = ({ title }) => {
         <div className="item-container">
           <ItemList products={products} />
         </div>
+        <Footer />
       </div>
     );
   } else {
     return (
       <>
         <div className="circular-progress-container">
-        <CircularProgress />
+          <CircularProgress sx={{ color: "white" }} />
         </div>
       </>
     );

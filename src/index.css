@@ -28,11 +28,13 @@ code {
 }
 
 .circular-progress-container {
-  height: 80vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url("https://www.ps4wallpapers.com/wp-content/uploads/2021/01/2021-01-05_5ff3e30555e3f_bnkbnlkn.jpg");
+  background-size: cover;
 }
 
 /*
@@ -40,22 +42,18 @@ code {
 */
 
 .navbar-title {
-  color: #000;
+  color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
 }
 
 .drawermenu-link {
-  color: #000;
+  color: rgb(0, 0, 0);
   font-family: "Nunito Sans", sans-serif;
 }
 
 .searchIcon {
-  color: #000;
-}
-
-.greatBuyLogo {
-  display: none;
+  color: rgb(255, 255, 255);
 }
 
 /*
@@ -64,116 +62,87 @@ code {
 
 .category-subtitle {
   width: 100%;
-  margin-top: 20px;
+  padding-top: 20px;
+  font-family: "Pushster", cursive;
   text-align: center;
-  font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
   font-weight: 900;
-  color: #000;
-}
-
-/*
-  BANNERS
-*/
-
-.index-banner-mobile,
-.index-banner-iphone-mobile,
-.category-banner-mobile {
-  width: 100%;
-  position: relative;
-}
-
-.index-banner-iphone-desktop,
-.index-banner-desktop,
-.category-banner-desktop {
-  width: 100%;
-  position: relative;
-  display: none;
-}
-
-.category-banner-img {
-  bottom: 20rem;
+  letter-spacing: 5px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0px 20px rgb(94, 0, 138);
 }
 
 /*
   HOMEPAGE SECTION
 */
 
-.index-banner-title {
-  position: absolute;
-  width: 80%;
-  top: 85vw;
-  left: 10vw;
-  font-family: "Nunito Sans", sans-serif;
-  text-align: center;
-  font-size: 12vw;
-  font-weight: 900;
+.index-container {
+  background-color: #190e1a;
+  background-image: url("https://www.ps4wallpapers.com/wp-content/uploads/2021/01/2021-01-05_5ff3e30555e3f_bnkbnlkn.jpg");
+  background-size: cover;
+  padding-bottom: 20px;
 }
 
-.index-banner-body {
-  position: absolute;
-  width: 80%;
-  top: 130vw;
-  left: 10vw;
-  font-family: "Nunito Sans", sans-serif;
-  text-align: center;
-  font-size: 5vw;
-  font-weight: 900;
-}
-
-.index-banner-samsung-container {
-  position: relative;
+.index-title-container {
   width: 100%;
-  overflow: hidden;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 5px;
 }
 
-.index-banner-samsung {
-  height: 90vh;
-  position: relative;
-  right: 300px;
-}
-
-.index-banner-samsung-title {
-  position: absolute;
-  top: 7vh;
-  right: 12vw;
-  color: #fff;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 8vw;
+.index-title {
+  font-family: "Pushster", cursive;
   font-weight: 900;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1),
+    0 0 30px rgba(255, 255, 255, 1), 0 0 40px #ff00de, 0 0 70px #ff00de,
+    0 0 80px #ff00de, 0 0 100px #ff00de;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
-.index-banner-samsung-btn {
-  position: absolute;
-  top: 15vh;
-  left: 35vw;
-  color: #fff;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 3vw;
-  font-weight: 900;
-  letter-spacing: 0.16em;
-  padding: 1vh 6vw;
-  border: 1px #fff solid;
-  border-radius: 0.5rem;
+.index-title:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1),
+    0 0 30px rgba(255, 255, 255, 1), 0 0 40px #00ffff, 0 0 70px #00ffff,
+    0 0 80px #00ffff, 0 0 100px #00ffff;
 }
 
-.index-banner-samsung-footer {
-  position: absolute;
-  bottom: 10vh;
-  left: 22vw;
-  color: #fff;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 7vw;
-  font-weight: 900;
+.index-subtitle {
+  font-family: "Pushster", cursive;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1),
+    0 0 30px rgba(255, 255, 255, 1), 0 0 40px #ff00de, 0 0 70px #ff00de,
+    0 0 80px #ff00de, 0 0 100px #ff00de;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.index-subtitle:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1),
+    0 0 30px rgba(255, 255, 255, 1), 0 0 40px #00ffff, 0 0 70px #00ffff,
+    0 0 80px #00ffff, 0 0 100px #00ffff;
 }
 
 .index-item-title {
-  width: 100%;
-  margin-top: 5vh;
-  font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0px 20px rgb(94, 0, 138);
+  font-family: "Pushster", cursive;
+  letter-spacing: 5px;
   text-align: center;
-  font-size: 6vw;
+  font-size: 1.8rem;
   font-weight: 900;
+}
+
+.index-item-title:hover {
+  text-shadow: 0 0px 20px rgb(153, 0, 224);
 }
 
 /*
@@ -181,7 +150,6 @@ code {
 */
 
 .footer-container {
-  background-color: #353535;
   color: #ffffff;
   padding: 20px 50px;
   font-family: "Nunito Sans", sans-serif;
@@ -195,14 +163,13 @@ code {
   cursor: pointer;
 }
 
-.footer-title {
-  margin: 20px 0;
+.footer-toTop:hover {
+  font-weight: 900;
 }
 
 .footer-item,
 .footer-link {
-  margin: 15px 0;
-  list-style-type: square;
+  margin: 5px 0;
 }
 
 .footer-link:hover {
@@ -213,29 +180,20 @@ code {
 .footer-contactUs {
   display: flex;
   align-items: center;
-  margin: 10px 0;
-}
-
-.mobilePhone {
-  margin: 0 15px;
+  margin: 5px 0;
 }
 
 .footer-links {
-  margin: 45px 0;
+  margin: 20px 0;
 }
 
-.footer-copyright {
-  display: flex;
-  align-items: center;
-  font-weight: 900;
-}
+/*
+  CATEGORY
+*/
 
-.copyright {
-  margin-right: 15px;
-}
-
-.footer-greatBuyLogo {
-  display: none;
+.category {
+  background-image: url("https://www.ps4wallpapers.com/wp-content/uploads/2021/01/2021-01-05_5ff3e30555e3f_bnkbnlkn.jpg");
+  background-size: cover;
 }
 
 /*
@@ -256,23 +214,25 @@ code {
   align-items: center;
   justify-content: space-between;
   width: 15rem;
-  height: 28rem;
   margin: 2vh 2vw;
-  color: #000;
+  color: rgb(255, 255, 255);
+  background-color: #ffffff0e;
   border-radius: 10px;
   font-family: "Nunito Sans", sans-serif;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-shadow: 0 0 10px rgb(94, 0, 138);
 }
 
 .card-item:hover {
   transition: 0.4s;
   transform: translate(0, -8px);
-  box-shadow: 0 0px 11px rgba(33, 33, 33, 0.2);
+  box-shadow: 0 0px 20px rgb(153, 0, 224);
 }
 
 .card-img {
-  width: 50%;
-  padding: 50px 10px 10px 10px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card-body {
@@ -284,30 +244,24 @@ code {
 
 .card-title {
   padding: 10px 20px;
+  font-size: 1.5rem;
   font-weight: 900;
+  text-shadow: 0 0px 20px rgb(94, 0, 138);
   text-align: center;
 }
 
 .card-description {
   color: #b2bec3;
-  padding: 0 8px;
+  padding: 0 15px;
+  margin: 10px 0;
 }
 
 .card-price {
   font-size: 20px;
   font-weight: 900;
-  color: #222f3e;
-}
-
-.card-footer {
-  width: 100%;
-  color: #fff;
-  background-color: #2183a2;
-  text-align: center;
-  padding: 15px;
-  margin-top: 5px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  color: #ffffff;
+  text-shadow: 0 0px 20px rgb(94, 0, 138);
+  margin: 10px 0;
 }
 
 /*
@@ -326,7 +280,8 @@ code {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid rgba(6, 4, 95, 0.5);
+  border: 1px solid rgb(94, 0, 138);
+  border-radius: 10px;
 }
 
 .card-btn-back {
@@ -343,19 +298,21 @@ code {
 */
 
 .cart-container {
-  margin: 50px 20vw;
+  padding: 50px 20vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #ffffff;
+  background-image: url("https://www.ps4wallpapers.com/wp-content/uploads/2021/01/2021-01-05_5ff3e30555e3f_bnkbnlkn.jpg");
+  background-size: cover;
 }
 
 .cart-title-container {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  border-bottom: 1px solid #2183a2;
 }
 
 .cart-item-container {
@@ -377,23 +334,23 @@ code {
 
 .cart-clearCart,
 .cart-finishOrder {
-  width: 100%;
   margin: 20px 0;
-  background-color: #a22121;
   color: #fff;
+  background-color: #9900ff;
+  border: 1px solid #ff00de;
   padding: 5px 20px;
   font-weight: 900;
-  font-size: 13px;
+  font-size: 0.8rem;
   text-align: center;
-  border: none;
   border-radius: 10px;
   box-shadow: 0 0 5px rgb(255, 81, 81);
   cursor: pointer;
 }
 
 .cart-item-img {
-  max-height: 80px;
+  max-height: 120px;
   margin: 10px 0;
+  border-radius: 10px;
 }
 
 .cart-item-quantity {
@@ -406,27 +363,26 @@ code {
 }
 
 .cart-item-footer {
-  width: 100%;
-  color: #fff;
-  background-color: #2183a2;
-  padding: 15px;
+  padding: 10px;
   margin-top: 5px;
-  border: none;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  text-align: center;
-  font-size: 15px;
   display: flex;
   justify-content: center;
+  text-align: center;
+  color: #fff;
+  background-color: #9900ff;
+  border: 1px solid #ff00de;
+  font-size: 0.8rem;
+  font-weight: 900;
+  border-radius: 10px;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .cart-total-container {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   font-family: "Nunito Sans", sans-serif;
-  border-top: 1px solid #2183a2;
   margin: 10px 0;
   padding-top: 10px;
 }
@@ -445,55 +401,20 @@ code {
 }
 
 .cart-empty {
-  height: 100vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  font-family: "Nunito Sans", sans-serif;
-  background: rgb(33, 131, 162);
-  background: linear-gradient(
-    0deg,
-    rgba(33, 131, 162, 0.3337710084033614) 38%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
-
-.cart-check {
-  height: 100vh;
-  background: rgb(237, 247, 237);
-  background: linear-gradient(
-    180deg,
-    rgba(237, 247, 237, 1) 33%,
-    rgba(200, 230, 200, 1) 100%
-  );
-}
-
-.cart-lottie-container {
-  height: 280px;
-}
-
-.cart-lottie-emptyBox {
-  height: 350px;
-}
-
-.cart-lottie-containerCheck {
-  display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.cart-lottie-check {
-  width: 70%;
+  text-align: center;
+  background-image: url("https://www.ps4wallpapers.com/wp-content/uploads/2021/01/2021-01-05_5ff3e30555e3f_bnkbnlkn.jpg");
+  background-size: cover;
+  color: #fff;
 }
 
 .cart-empty-title {
   font-size: 20px;
   font-weight: 900;
-}
-
-.cart-empty-body {
-  width: 80%;
 }
 
 .cart-item-footer:hover {
@@ -504,128 +425,82 @@ code {
     DETAIL ITEM COMPONENT
 */
 
-.detail-background {
-  height: 200px;
-  width: 100vw;
-  position: absolute;
-  background-color: #2183a2;
-}
-
 .detail-card-item {
-  height: 80vh;
+  height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  margin: 30px 30px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #ffffff;
+  background-image: url("https://www.ps4wallpapers.com/wp-content/uploads/2021/01/2021-01-05_5ff3e30555e3f_bnkbnlkn.jpg");
+  background-size: cover;
 }
 
 .detail-card-img {
   max-height: 150px;
   max-width: 200px;
+  border-radius: 15px;
+  box-shadow: 0 0 50px rgb(94, 0, 138);
 }
 
 .detail-card-title {
   width: 80%;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 5vw;
+  font-size: 1.5rem;
   font-weight: 900;
   text-align: center;
 }
 
 .detail-card-description {
+  width: 80%;
   color: #b2bec3;
-  font-family: "Nunito Sans", sans-serif;
 }
 
 .detail-card-price {
-  font-family: "Nunito Sans", sans-serif;
   font-weight: 900;
 }
 
-.detail-card-stock {
-  font-family: "Nunito Sans", sans-serif;
-}
-
 @media only screen and (min-width: 480px) {
-  .index-banner-mobile,
-  .index-banner-iphone-mobile,
-  .category-banner-mobile,
-  .detail-banner-mobile {
-    display: none;
-  }
-
-  .index-banner-desktop,
-  .index-banner-iphone-desktop,
-  .category-banner-desktop,
-  .detail-banner-desktop {
-    display: block;
-  }
-
-  .index-banner-body,
-  .index-banner-title {
-    display: none;
-  }
-
-  .index-banner-samsung {
-    width: 100%;
-    height: auto;
-    right: 0;
-  }
-
-  .index-banner-samsung-title {
-    top: 5vh;
-    left: 22vw;
-    color: #fff;
-    font-size: 5vw;
-  }
-
-  .index-banner-samsung-btn {
-    top: 20%;
-    left: 35vw;
-    font-size: 1.5vw;
-    padding: 1% 5%;
-  }
-
-  .index-banner-samsung-btn:hover {
-    box-shadow: 0 0px 11px rgb(255, 255, 255);
-  }
-
-  .index-banner-samsung-footer {
-    left: 30vw;
-    font-size: 4vw;
-  }
-
   .index-item-title {
-    font-size: 3vw;
+    font-size: 2rem;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .greatBuyLogo {
-    display: block;
-    width: 100px;
+  .index-title {
+    font-size: 3em;
   }
 
-  .homeIcon {
-    display: none;
+  .index-subtitle {
+    font-size: 3em;
+  }
+
+  .index-item-title {
+    font-size: 2.2rem;
   }
 
   .category-subtitle {
     font-size: 1.8rem;
-    margin-top: 30px;
+    padding-top: 30px;
+  }
+
+  .card-item {
+    flex-direction: row;
+    justify-content: center;
+    width: 32rem;
+    margin: 50px 30px;
+  }
+
+  .card-img {
+    height: 300px;
+    max-width: 300px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
   }
 
   .detail-card-title {
     font-size: 4vw;
-  }
-
-  .cart-lottie-check {
-    width: 10%;
   }
 
   .footer-toTop {
@@ -636,28 +511,31 @@ code {
     font-size: 1.3rem;
   }
 
-  .footer-greatBuyLogo {
-    display: block;
-    position: absolute;
-    top: 330px;
-    right: 60px;
-    width: 200px;
+  .cart-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 100vh;
   }
 }
 
 @media only screen and (min-width: 1024px) {
+  .index-title {
+    font-size: 3.5em;
+  }
+
+  .index-subtitle {
+    font-size: 3.5em;
+  }
+
   .category-subtitle {
     font-size: 2rem;
-    margin-top: 35px;
+    padding-top: 35px;
   }
 
   .detail-card-title {
     font-size: 3vw;
-  }
-
-  .card-item {
-    width: 20rem;
-    margin: 4vh 4vw;
   }
 }
 

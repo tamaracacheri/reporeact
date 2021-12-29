@@ -8,7 +8,6 @@ import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 import SearchInput from "./SearchInput";
 import { Button, Collapse, SvgIcon } from "@mui/material";
-import greatBuyLogo from "../assets/greatBuyLogo.png";
 
 export default function NavBar() {
   const [searchBar, setSearchBar] = React.useState(false);
@@ -27,24 +26,20 @@ export default function NavBar() {
     <Box>
       <AppBar
         sx={{
-          background: "#fff",
+          background: "rgb(25, 0, 35)",
+          color: "#ffffff",
         }}
         position="static"
       >
         <Toolbar
           sx={{
-            color: "#fff",
+            color: "#ffffff",
           }}
         >
           <DrawerMenu />
           <Box sx={{ display: "flex", alignItems: "center", flexGrow: 5 }}>
             <Link className="navbar-title" to="/">
               <HomeIcon />
-              <img
-                src={greatBuyLogo}
-                alt="great buy logo"
-                className="greatBuyLogo"
-              />
             </Link>
           </Box>
           <Box>

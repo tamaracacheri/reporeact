@@ -13,7 +13,6 @@ const ItemList = ({ products }) => {
             img={product.img}
             stock={product.stock}
             price={product.price}
-            stars={product.stars}
           />
         );
       })}

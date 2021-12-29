@@ -1,5 +1,5 @@
 {
-  "name": "greatbuyshop",
+  "name": "pacagada",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,7 +16,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
-    "firebase": "^9.6.0",
+    "firebase": "^9.6.1",
     "lottie-web": "^5.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -28,7 +28,7 @@
     "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2"
   },
-  "homepage": "https://germanrtouron.github.io",
+  "homepage": "https://tamaracacheri.github.io",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
