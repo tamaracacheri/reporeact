@@ -6,7 +6,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import ItemList from "./ItemList";
+import ItemList from "./itemList";
 import Footer from "./Footer";
 
 const Home = ({ title }) => {

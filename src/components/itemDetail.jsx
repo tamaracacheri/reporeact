@@ -1,5 +1,5 @@
 import { Fade } from "@mui/material";
-import ItemCount from "./ItemCount";
+import ItemCount from "./itemCount";
 
 const ItemDetail = (item) => {
   const { id, title, price, stock, img, description } = item.item;
